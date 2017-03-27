@@ -1,0 +1,41 @@
+report.pdf   103062214  李岳容
+
+	(1) DCT image compression
+		a.) discuss PSNR value here
+			-> PSNR = 26.8434 for n = 2, PSNR = 33.2974 for n = 4, PSNR = 304.5931 for n = 8
+			-> PSNR means how similar the output image is compared with the original image.
+			-> The larger the PSNR is, the more similar compared with the original image is.
+			-> The reason why n = 8 has large PSNE is that n = 8 keep more pixel of original picture. However, when n = 2,
+			   we will discard some pixel, which result in distortion, and make the PSNR much smaller.
+		b.) discuss PSNR value here
+			-> PSNR = 26.8434 for n = 2, PSNR = 33.2974 for n = 4, PSNR = 304.9812 for n = 8
+			-> PSNR means how similar the output image is compared with the original image.
+			-> The larger the PSNR is, the more similar compared with the original image is.
+			-> same as problem a.), n = 8 will keep more pixel, and n = 2 keep less, which leads to the result of PSNR.
+		c.) compare subproblem a.) with subproblem b.)
+			-> Both are the same, when it comes to PSNR versus n(for upper left nXn). The Larger the n is, the Bigger the PSNR is,
+			   which means more similar to the original image.
+			-> for n = 2, n = 4, the PSNR in a.) and b.) are the same. There's only a little bit different in PSNR between a.) 
+			   and b.) for n = 8. Because RGB <-> YIQ just change color but pixel, we won't loss any pixel during transformation.
+			   That's why the PSNR in a.) and b.) is so similar.
+
+	(2) Image filter
+		a.) compares 3X3 Gaussian with 9X9
+			-> picture using 3X3 Gaussian filter has lots of little and clear white dots. Picture using 9X9 filter also has lots of white
+			   dots. However, those dots are not that clear as 3X3. In 9X9, both dots and picture itself are more blur. 
+		b.) compares media filter and Gaussion filter
+			-> the effect of blur is much better in picture using media filter than gaussian one. In media filter, there's no white dot, 
+			   and the effect of blur is more smooth and clear than picture using gaussian.
+			
+	(3) Interpolation
+		a.) Compute the PSNR with the origial picture.
+			-> PSNR = 26.8497
+		b.)	Compute the PSNR with the origial picture.
+			-> PSNR = 24.0196
+		c.) Compare the result
+			-> PSNR is larger than b.)PSNR, which means picture using nearest_neighbor is more similar to original picture
+			   than biliner. For this way really picks some pixels of original picture, so it is more similar.
+			-> However, biliner makes the picture more smooth. For neaest_neighbor just pick one neightbor, it makes 4 pixels
+			   same as 1 pixel of original picture, but different with all the other near pixels. However, bilinear
+			   makes up its 1 pixel by mixing 4 neighbor, so output will be more smooth. 
+		
